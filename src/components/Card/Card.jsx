@@ -13,7 +13,7 @@ const Card = ({ data }) => {
           {" "}
           <strong>{data.title}</strong>
         </span>
-        <h1>Genres : {data.genre} </h1>
+        <h1 className={cx("genre")}>Genres : {data.genre} </h1>
       </div>
     </div>
   )
