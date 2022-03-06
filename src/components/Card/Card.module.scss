@@ -9,12 +9,18 @@
 
     opacity: 0.5;
   }
+  strong {
+    font-weight: 700;
+    font-size: var(--text-md);
+  }
 
   h1 {
     font-family: var(--family-main);
     line-height: 1.2;
-
-    font-size: var(--text-md);
+    font-family: var(--family-main);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    font-weight: 400;
   }
   :hover {
     background-color: rgb(246, 248, 250);
@@ -26,7 +32,7 @@
 //   .card_wrapper {
 //     background: darkblue;
 //     display: grid;
-//     grid-template-columns: repeat(1, 1fr);
+//     grid-template-columns: 1fr 1fr;
 //   }
 // }
 // @media (min-width: 300px) {

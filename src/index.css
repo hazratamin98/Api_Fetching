@@ -18,8 +18,8 @@
   --hd-lg: 2.5rem;
   --hd-xl: 3rem; */
 
-  --gradient-one: #29b56e;
-  --gradient-two: #19b195;
+  /* --gradient-one: #29b56e;
+  --gradient-two: #19b195; */
 
   --box-shadow: rgba(34, 51, 84, 0.2) 0px 2px 8px -3px,
     rgba(34, 51, 84, 0.1) 0px 5px 22px -4px;
@@ -57,11 +57,4 @@ h6 {
 
 p {
   margin: 0;
-}
-
-p,
-span,
-label {
-  /* font-family: inherit; */
-  color: inherit;
 }

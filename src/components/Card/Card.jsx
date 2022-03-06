@@ -7,15 +7,13 @@ const cx = classNames.bind(styles)
 const Card = ({ data }) => {
   return (
     <div className={cx("card_wrapper")}>
+      <img src={data.poster} alt="..." />
       <div>
-        <img src={data.poster} alt="..." />
-        <div>
-          <span>
-            {" "}
-            <strong>{data.title}</strong>
-          </span>
-          <h1>Genres : {data.genre} </h1>
-        </div>
+        <span>
+          {" "}
+          <strong>{data.title}</strong>
+        </span>
+        <h1>Genres : {data.genre} </h1>
       </div>
     </div>
   )
