@@ -1,9 +1,9 @@
 import "./App.css"
-import Card from "./Page/Card/Card"
+import { Home } from "./Page"
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Home />
     </div>
   )
 }

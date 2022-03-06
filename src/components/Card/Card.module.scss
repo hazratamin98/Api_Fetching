@@ -1,0 +1,40 @@
+.card_wrapper {
+  border: 1px solid gray;
+  margin: 1rem 1rem;
+  box-shadow: var(--box-shadow);
+
+  img {
+    width: 100%;
+    height: 400px;
+
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: var(--family-main);
+    line-height: 1.2;
+
+    font-size: var(--text-md);
+  }
+  :hover {
+    background-color: rgb(246, 248, 250);
+    opacity: 3;
+  }
+}
+
+// @media screen and (max-width: 500px) {
+//   .card_wrapper {
+//     background: darkblue;
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//   }
+// }
+// @media (min-width: 300px) {
+//   .card_wrapper {
+//     grid-template-columns: repeat(1, 1fr);
+//     gap: 2rem;
+//   }
+//   // .list_wrapper {
+//   //   max-width: 100%;
+//   // }
+// }
