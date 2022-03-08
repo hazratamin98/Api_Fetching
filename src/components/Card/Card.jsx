@@ -1,8 +1,9 @@
-import React from "react"
-import classNames from "classnames/bind"
+import React, { useState } from "react";
 
-import styles from "./Card.module.scss"
-const cx = classNames.bind(styles)
+import classNames from "classnames/bind";
+
+import styles from "./Card.module.scss";
+const cx = classNames.bind(styles);
 
 const Card = ({ data }) => {
   return (
@@ -13,10 +14,19 @@ const Card = ({ data }) => {
           {" "}
           <strong>{data.title}</strong>
         </span>
-        <h1 className={cx("genre")}>Genres : {data.genre} </h1>
+        <div className={cx("genres_content")}>
+          <span>Genres:</span>
+          <ul className={cx("genres_list")}>
+            {data.genre?.map((g) => (
+              <li className="genre" key={g}>
+                {g}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

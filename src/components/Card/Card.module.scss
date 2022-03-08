@@ -15,15 +15,29 @@
   }
 
   h1 {
-    font-family: var(--family-main);
+    color: var(--text-primary);
     line-height: 1.2;
     font-family: var(--family-main);
-    color: var(--text-primary);
     font-size: var(--text-base);
     font-weight: 400;
   }
+
   :hover {
     background-color: rgb(246, 248, 250);
     opacity: 3;
+  }
+  .genres_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .genres_list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  ul {
+    list-style: none;
   }
 }
