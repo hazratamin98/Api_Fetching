@@ -10,7 +10,6 @@ const Home = () => {
   const [temp, setTemp] = useState([])
   const [searchText, setSearchText] = useState("")
   const [check, setCheck] = useState("")
-  const [text, setText] = useState("")
 
   useEffect(() => {
     axios
