@@ -35,7 +35,7 @@ const Home = () => {
         : filterText
 
     setNotes(filterCheck)
-  }, [searchText, check])
+  }, [searchText, check, temp])
 
   const handleClear = () => {
     setSearchText("")
