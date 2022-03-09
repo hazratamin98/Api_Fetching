@@ -5,29 +5,35 @@ import classNames from "classnames/bind"
 import styles from "./Header.module.scss"
 const cx = classNames.bind(styles)
 
-const Header = ({ data }) => {
-  const [searchText, setSearchText] = useState("")
-
+const Header = ({
+  check,
+  searchText,
+  setCheck,
+  setSearchText,
+  handleClick,
+}) => {
   return (
     <div className={cx("header_wrapper")}>
       <div className={cx("category ")}>
-        <div className="category-radio">
+        <div className="category_radio">
           <input
             type="radio"
-            // checked={selectedType === "movie"}
             name="mediaType"
             id="movie"
-            // onChange={() => setSelectedType("movie")}
+            checked={check === "movie"}
+            value="movie"
+            onClick={(e) => setCheck(e.target.value)}
           />
           <label htmlFor="movie">Movies</label>
         </div>
-        <div className="category-radio">
+        <div className="category_radio">
           <input
             type="radio"
-            // checked={selectedType === "book"}
             name="mediaType"
             id="book"
-            // onChange={() => setSelectedType("book")}
+            checked={check === "book"}
+            value="book"
+            onClick={(e) => setCheck(e.target.value)}
           />
           <label htmlFor="book">Books</label>
         </div>
@@ -55,8 +61,10 @@ const Header = ({ data }) => {
               )
             })} */}
         </div>
-        {/* onClick={clearAllFilters} */}
-        <label className="clear-filters">CLEAR FILTERS</label>
+
+        <label className="clear-filters" onClick={handleClick}>
+          CLEAR FILTERS
+        </label>
       </div>
     </div>
   )

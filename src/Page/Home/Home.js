@@ -7,15 +7,9 @@ import List from "../../components/List/List"
 
 const Home = () => {
   const [notes, setNotes] = useState([])
-
-  // const [userData, setUserData] = useState([])
-  // const [genres, setGenres] = useState([])
-  // const [years, setYears] = useState([])
-
-  // const [selectedType, setSelectedType] = useState("")
-  // const [selectedGenres, setSelectedGenres] = useState([])
-  // const [selectedYears, setSelectedYears] = useState([])
-  // const [searchText, setSearchText] = useState("")
+  const [temp, setTemp] = useState([])
+  const [searchText, setSearchText] = useState("")
+  const [check, setCheck] = useState("")
 
   useEffect(() => {
     axios
@@ -26,21 +20,37 @@ const Home = () => {
         const data = res.data.media
 
         setNotes(data)
+        setTemp(data)
       })
   }, [])
 
-  console.log(notes)
+  useEffect(() => {
+    let filterText = temp.filter((item) =>
+      item.title.toLowerCase().includes(searchText.toLowerCase())
+    )
 
-  // const cleaAllFilters = () => {
-  //   setSearchText("")
-  //   setSelectedGenres([])
-  //   setSelectedType("")
-  //   setSelectedYears([])
-  // }
+    let filterCheck =
+      check !== ""
+        ? filterText.filter((item) => item.type === check)
+        : filterText
+
+    setNotes(filterCheck)
+  }, [searchText, check])
+
+  const handleClear = () => {
+    setSearchText("")
+    setCheck("")
+  }
 
   return (
     <Container>
-      <Header data={notes} />
+      <Header
+        check={check}
+        setCheck={setCheck}
+        searchText={searchText}
+        setSearchText={setSearchText}
+        handleClick={handleClear}
+      />
       <List data={notes} />
     </Container>
   )
